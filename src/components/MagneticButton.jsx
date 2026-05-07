@@ -10,8 +10,8 @@ const MagneticButton = ({ children, className, onClick, href }) => {
     const { height, width, left, top } = ref.current.getBoundingClientRect();
     const middleX = clientX - (left + width / 2);
     const middleY = clientY - (top + height / 2);
-    // Attenuate the movement slightly so it's not wild
-    setPosition({ x: middleX * 0.3, y: middleY * 0.3 });
+    // Increase the attenuation for a more premium "sticky" feel
+    setPosition({ x: middleX * 0.4, y: middleY * 0.4 });
   };
 
   const reset = () => {

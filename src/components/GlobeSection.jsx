@@ -8,12 +8,18 @@ const GlobeSection = () => {
   const canvasRef = useRef();
 
   useEffect(() => {
+    if (!canvasRef.current) return;
+
     let phi = 0;
+    let width = 0;
+    const onResize = () => canvasRef.current && (width = canvasRef.current.offsetWidth);
+    window.addEventListener('resize', onResize);
+    onResize();
 
     const globe = createGlobe(canvasRef.current, {
       devicePixelRatio: 2,
-      width: 1000,
-      height: 1000,
+      width: (width || 500) * 2,
+      height: (width || 500) * 2,
       phi: 0,
       theta: 0.2,
       dark: 1,
@@ -21,20 +27,21 @@ const GlobeSection = () => {
       mapSamples: 16000,
       mapBrightness: 6,
       baseColor: [0.1, 0.1, 0.15],
-      markerColor: [0.65, 0.33, 0.96], // Primary purple
-      glowColor: [0.06, 0.71, 0.83], // Secondary cyan glow
-      markers: [
-        // Marker for Mardan, Pakistan roughly
-        { location: [34.1989, 72.0404], size: 0.1 }
-      ],
+      markerColor: [0.65, 0.33, 0.96],
+      glowColor: [0.06, 0.71, 0.83],
+      markers: [{ location: [34.1989, 72.0404], size: 0.1 }],
       onRender: (state) => {
-        // Rotate globe slowly
         state.phi = phi;
         phi += 0.005;
+        state.width = (width || 500) * 2;
+        state.height = (width || 500) * 2;
       }
     });
 
-    return () => globe.destroy();
+    return () => {
+      globe.destroy();
+      window.removeEventListener('resize', onResize);
+    };
   }, []);
 
   return (

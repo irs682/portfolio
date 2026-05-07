@@ -23,7 +23,7 @@ const GithubStats = () => {
         </h3>
         <div className="flex justify-center min-w-max">
           <GitHubCalendar 
-            username="irshadamin" 
+            username="irs682" 
             colorScheme="dark"
             theme={explicitTheme}
             fontSize={14}

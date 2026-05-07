@@ -1,21 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-scroll';
-import { Menu, X, Terminal } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Mail, ArrowUpRight } from 'lucide-react';
+import { portfolioData } from '../data/portfolioData';
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
-  const navLinks = [
-    { name: 'Home', to: 'home' },
-    { name: 'About', to: 'about' },
-    { name: 'Skills', to: 'skills' },
-    { name: 'Projects', to: 'projects' },
-    { name: 'Experience', to: 'experience' },
-    { name: 'Certifications', to: 'certifications' },
-    { name: 'Contact', to: 'contact' },
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,75 +15,68 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header 
-      className={`fixed top-0 w-full z-40 transition-all duration-300 ${
-        scrolled ? 'glass py-3' : 'bg-transparent py-5'
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
+        scrolled ? 'py-4' : 'py-8'
       }`}
     >
-      <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
-        {/* Logo */}
-        <div className="flex items-center gap-2 cursor-pointer">
-          <Terminal className="text-primary-400 w-6 h-6" />
-          <span className="font-bold text-xl tracking-wider text-gradient">IRSHAD.AI</span>
-        </div>
-
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.to}
-              smooth={true}
-              duration={500}
-              spy={true}
-              activeClass="text-primary-400"
-              className="text-sm font-medium text-gray-300 hover:text-white cursor-pointer transition-colors"
-            >
-              {link.name}
-            </Link>
-          ))}
-          <a 
-            href="#contact" 
-            className="px-5 py-2 rounded-full bg-white/5 border border-white/10 hover:border-primary-500/50 hover:bg-white/10 transition-all text-sm font-medium"
-          >
-            Hire Me
-          </a>
-        </nav>
-
-        {/* Mobile Toggle */}
-        <button 
-          className="md:hidden text-gray-300 hover:text-white focus:outline-none"
-          onClick={() => setIsOpen(!isOpen)}
+      <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
+        {/* Logo / Name */}
+        <motion.div 
+          whileHover={{ scale: 1.02 }}
+          className="flex items-center gap-3 cursor-pointer"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          <div className="w-10 h-10 bg-slate-950 rounded-xl flex items-center justify-center shadow-2xl">
+            <span className="text-white font-black text-xl">I</span>
+          </div>
+          <div className="flex flex-col">
+            <span className="text-slate-950 font-black text-sm tracking-tighter uppercase">
+              {portfolioData.personal.name}
+            </span>
+            <span className="text-[9px] font-bold text-primary-600 uppercase tracking-widest mt-[-2px]">
+              Zenith Grade AI
+            </span>
+          </div>
+        </motion.div>
+
+        {/* Action Button */}
+        <div className="flex items-center gap-6">
+          <motion.a
+            whileHover={{ y: -2 }}
+            href={`mailto:${portfolioData.personal.contact.email}`}
+            className="hidden md:flex items-center gap-2 text-[10px] font-black text-slate-400 hover:text-slate-950 transition-colors uppercase tracking-[0.2em]"
+          >
+            <Mail size={14} /> Get in Touch
+          </motion.a>
+          
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            href="#contact"
+            className="px-4 md:px-6 py-3 bg-slate-950 text-white rounded-full text-[10px] font-black uppercase tracking-widest shadow-xl shadow-slate-900/10 flex items-center gap-2"
+          >
+            <span className="hidden sm:inline">Initialize Project</span>
+            <span className="sm:hidden text-[8px]">Initialize</span>
+            <ArrowUpRight size={14} />
+          </motion.a>
+        </div>
       </div>
 
-      {/* Mobile Nav */}
+      {/* Glass Background on Scroll */}
       <AnimatePresence>
-        {isOpen && (
-          <motion.div 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 w-full glass border-t border-white/5 py-4 px-6 md:hidden flex flex-col gap-4 shadow-2xl"
-          >
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.to}
-                smooth={true}
-                duration={500}
-                onClick={() => setIsOpen(false)}
-                className="text-base font-medium text-gray-300 hover:text-primary-400 cursor-pointer py-2 border-b border-white/5"
-              >
-                {link.name}
-              </Link>
-            ))}
-          </motion.div>
+        {scrolled && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="absolute inset-0 bg-white/70 backdrop-blur-xl border-b border-slate-200/50 -z-10"
+          />
         )}
       </AnimatePresence>
-    </header>
+    </motion.nav>
   );
 };
 

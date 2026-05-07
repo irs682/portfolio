@@ -1,57 +1,96 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
 
 @import "tailwindcss";
 @config "../tailwind.config.js";
 
 @layer base {
   body {
-    @apply bg-dark-900 text-gray-200 font-sans antialiased overflow-x-hidden;
+    @apply bg-slate-50 text-slate-900 font-sans antialiased overflow-x-hidden;
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(at 0% 0%, rgba(79, 70, 229, 0.05) 0px, transparent 50%),
+      radial-gradient(at 50% 0%, rgba(6, 182, 212, 0.05) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(79, 70, 229, 0.05) 0px, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-slate-950 font-black;
+  }
+
+  .noise {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    opacity: 0.03;
+    z-index: 9999;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   }
 }
 
-.glass {
-  @apply bg-dark-800/60 backdrop-blur-md border border-white/5 shadow-lg;
+@layer components {
+  .glass {
+    @apply bg-white/70 backdrop-blur-2xl border border-white/40 shadow-[0_8px_32px_0_rgba(15,23,42,0.06)];
+  }
+
+  .glass-card {
+    @apply relative overflow-hidden bg-white/30 backdrop-blur-xl border border-slate-200/40 shadow-sm transition-all duration-700 hover:border-primary-500/40 hover:bg-white/60 hover:shadow-2xl hover:shadow-primary-500/10;
+  }
+
+  .glow-primary {
+    @apply relative after:absolute after:inset-0 after:bg-primary-500/20 after:blur-3xl after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-700;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 via-primary-500 to-secondary-500 font-black;
+  }
+
+  .text-gradient-purple {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-primary-500 to-cyan-500;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-6xl font-black mb-6 tracking-tighter;
+  }
+
+  .section-subtitle {
+    @apply text-primary-600 font-display font-bold uppercase tracking-[0.4em] text-[10px] mb-4 block;
+  }
 }
 
-.glass-card {
-  @apply bg-dark-800/40 backdrop-blur-xl border border-white/5 shadow-xl hover:border-primary-500/30 transition-all duration-300;
-}
-
-.text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-secondary-400;
-}
-
-.text-gradient-purple {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500;
-}
-
-.hover-glow:hover {
-  box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
-}
-
-/* Custom Scrollbar */
+/* Custom Scrollbar - Advanced Light */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #050505;
+  background: #f8fafc;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1f1f1f;
-  border-radius: 4px;
+  background: #e2e8f0;
+  border-radius: 10px;
+  border: 2px solid #f8fafc;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #333;
+  background: #cbd5e1;
 }
 
-html.dark {
-  color-scheme: dark;
-}
-
-/* Hide scrollbar for clean look but allow scrolling */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }

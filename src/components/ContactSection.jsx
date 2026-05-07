@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Send } from 'lucide-react';
+import { Mail, MapPin, Send, Globe, Phone } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import MagneticButton from './MagneticButton';
 
@@ -44,6 +44,18 @@ const ContactSection = () => {
                   <h4 className="text-sm font-medium text-gray-400">Email</h4>
                   <a href={`mailto:${portfolioData.personal.contact.email}`} className="text-white hover:text-primary-400 transition-colors">
                     {portfolioData.personal.contact.email}
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4 group">
+                <div className="w-12 h-12 rounded-full glass border border-white/10 flex items-center justify-center group-hover:border-primary-400/50 transition-colors">
+                  <Phone className="text-primary-400" size={20} />
+                </div>
+                <div>
+                  <h4 className="text-sm font-medium text-gray-400">Phone</h4>
+                  <a href={`tel:${portfolioData.personal.contact.phone}`} className="text-white hover:text-primary-400 transition-colors">
+                    {portfolioData.personal.contact.phone}
                   </a>
                 </div>
               </div>

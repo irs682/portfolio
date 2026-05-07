@@ -1,11 +1,19 @@
-import { Code2, Brain, Database, Layout, Server, Cpu, Search, MessagesSquare } from 'lucide-react';
+import { Code2, Brain, Database, Layout, Server, Cpu, Search, MessagesSquare, Camera, Image, Activity, ScanFace } from 'lucide-react';
 
 export const portfolioData = {
   personal: {
     name: "Irshad Amin",
-    profileImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800",
+    profileImages: [
+      "/src/assets/irhsad.jpg",
+      "/src/assets/image4.jpg",
+      "/src/assets/imge3.jpg"
+    ],
     titles: [
       "AI Engineer",
+      1000,
+      "Computer Vision Specialist",
+      1000,
+      "Medical AI Researcher",
       1000,
       "MERN Stack Developer",
       1000,
@@ -14,60 +22,98 @@ export const portfolioData = {
       "Full Stack Developer",
       1000
     ],
-    bio: "Passionate AI Engineer and Full Stack Developer dedicated to building intelligent, scalable web applications and advanced AI systems. With a strong foundation in Machine Learning, Information Retrieval, and the MERN stack, I bridge the gap between complex algorithms and user-centric design.",
+    bio: "I am a high-performance AI Engineer and Full-Stack Developer specializing in the intersection of Neural Architectures and Scalable Systems. With a focus on Deep Learning and Web Scraping, I engineer intelligent data pipelines and RAG-driven applications that transform raw data into strategic insights. My mission is to bridge the gap between complex research and deployable, user-centric technology.",
     contact: {
-      email: "hello@irshadamin.com",
-      linkedin: "https://linkedin.com/in/irshadamin",
-      github: "https://github.com/irshadamin",
+      email: "irshad.uetmardan@gmail.com",
+      phone: "03339359986",
+      linkedin: "https://www.linkedin.com/in/irshadamin-aidev?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+      github: "https://github.com/irs682",
       location: "Mardan, Pakistan"
     }
   },
   skills: [
-    { name: "React.js", category: "Frontend", level: 90 },
-    { name: "Node.js", category: "Backend", level: 85 },
-    { name: "Express.js", category: "Backend", level: 85 },
-    { name: "MongoDB", category: "Database", level: 80 },
-    { name: "Python", category: "AI/ML", level: 90 },
-    { name: "TensorFlow", category: "AI/ML", level: 75 },
-    { name: "PyTorch", category: "AI/ML", level: 80 },
-    { name: "NLP", category: "AI/ML", level: 85 },
-    { name: "FAISS", category: "AI/ML", level: 70 },
-    { name: "Docker", category: "DevOps", level: 65 },
-    { name: "Git/GitHub", category: "Tools", level: 90 },
+    { name: "MongoDB", category: "Backend", level: 90 },
+    { name: "Express.js", category: "Backend", level: 88 },
+    { name: "React.js", category: "Frontend", level: 95 },
+    { name: "Node.js", category: "Backend", level: 90 },
+    { name: "Python", category: "AI/ML", level: 98 },
+    { name: "Web Scraping", category: "AI/ML", level: 92 },
+    { name: "Machine Learning", category: "AI/ML", level: 95 },
+    { name: "Deep Learning", category: "AI/ML", level: 94 },
+    { name: "NLP", category: "AI/ML", level: 95 },
+    { name: "RAG Systems", category: "AI/ML", level: 90 },
+    { name: "Computer Vision", category: "AI/ML", level: 88 },
+    { name: "LLM Applications", category: "AI/ML", level: 92 },
+    { name: "FAISS / Vector DB", category: "AI/ML", level: 85 },
+    { name: "Docker", category: "DevOps", level: 75 },
+    { name: "Git/GitHub", category: "Tools", level: 95 },
   ],
   projects: [
     {
       id: 1,
-      title: "Smart AI Chatbot for University Website",
-      description: "An intelligent conversational agent integrated into the university portal to assist students with queries regarding admissions, courses, and campus facilities in real-time.",
-      category: "AI/ML",
-      tech: ["React", "Python", "NLP", "FastAPI", "MongoDB"],
-      features: ["Real-time response", "Context-aware conversational AI", "Admin dashboard for analytics"],
-      github: "#",
-      demo: "#",
-      image: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&q=80&w=800"
-    },
-    {
-      id: 2,
-      title: "University Website Data Scraper",
-      description: "Automated data extraction tool built to systematically scrape, clean, and organize complex institutional data into a structured format for analytics.",
-      category: "Data",
-      tech: ["Python", "BeautifulSoup", "Selenium", "Pandas"],
-      features: ["Automated scheduling", "Robust error handling", "Data export (CSV/JSON)"],
-      github: "#",
+      title: "Nexus Platform",
+      description: "A comprehensive administrative dashboard and networking platform featuring role-based registries, real-time data synchronization, and advanced communication tools.",
+      category: "Web Dev",
+      tech: ["React", "Node.js", "Express", "MongoDB"],
+      features: ["Role-based access control", "Real-time synchronization", "Advanced search engine"],
+      github: "https://github.com/irs682/nexus",
       demo: "#",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
     },
     {
-      id: 3,
-      title: "AI-based Question Answering System",
-      description: "A sophisticated NLP system capable of understanding complex user queries and retrieving precise answers from large document corpus using state-of-the-art embedding models.",
-      category: "AI/ML",
-      tech: ["PyTorch", "HuggingFace Transformers", "FAISS", "React"],
-      features: ["Semantic search", "High accuracy retrieval", "RAG architecture implementation"],
-      github: "#",
+      id: 2,
+      title: "E-Commerce Platform",
+      description: "A full-featured digital storefront built with modern web technologies, offering secure user authentication, shopping cart functionality, and integrated checkout.",
+      category: "Web Dev",
+      tech: ["React", "Redux", "Node.js", "MongoDB"],
+      features: ["Secure authentication", "Shopping cart state management", "Responsive UI"],
+      github: "https://github.com/irs682/ecommerce-project",
       demo: "#",
-      image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800"
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      id: 3,
+      title: "Food Delivery App",
+      description: "A dynamic, user-friendly food delivery application providing seamless browsing, order tracking, and restaurant discovery.",
+      category: "Web Dev",
+      tech: ["MERN Stack", "TailwindCSS", "Redux"],
+      features: ["Real-time tracking", "Dynamic menu rendering", "Secure payments"],
+      github: "https://github.com/irs682/Food-Delivery-App",
+      demo: "#",
+      image: "https://images.unsplash.com/photo-1526367790999-0150786686a2?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      id: 4,
+      title: "Sales Forecasting Model",
+      description: "A predictive machine learning pipeline designed to analyze historical sales data and accurately forecast future revenue trends.",
+      category: "AI/ML",
+      tech: ["Python", "Pandas", "Scikit-Learn", "Matplotlib"],
+      features: ["Data preprocessing", "Trend analysis", "Predictive modeling"],
+      github: "https://github.com/irs682/Sales_Forecasting_Week-1",
+      demo: "#",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      id: 5,
+      title: "University Rules & Regulations AI",
+      description: "A specialized compliance chatbot designed to navigate complex university policies using RAG and high-precision NLP models.",
+      category: "AI / MERN",
+      tech: ["MERN Stack", "RAG", "NLP API", "Vector DB"],
+      features: ["Context-aware responses", "Administrative automation", "Real-time sync"],
+      github: "https://github.com/irs682",
+      demo: "#",
+      image: "https://images.unsplash.com/photo-1531746790731-6c087fecd05a?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      id: 6,
+      title: "Next World Predictor",
+      description: "An advanced data science notebook demonstrating techniques for handling mixed variables and conducting deep feature engineering for predictive models.",
+      category: "Data Science",
+      tech: ["Python", "Jupyter", "Pandas", "Feature Engineering"],
+      features: ["Mixed variable handling", "Data imputation", "Exploratory data analysis"],
+      github: "https://github.com/irs682/Handling-Mixed-Variables-Feature-Engineering/blob/main/next_world_pridactor_project.ipynb",
+      demo: "#",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
     }
   ],
   experience: [
@@ -89,18 +135,30 @@ export const portfolioData = {
   education: [
     {
       id: 1,
-      degree: "BS Computer Science",
+      degree: "BS Computer Engineering",
       institution: "UET Mardan",
-      date: "2020 - 2024",
-      details: "Focusing on Machine Learning, NLP, and Full Stack Web Development. Active participant in technical societies and hackathons."
+      date: "2022 - 2026",
+      details: "Specializing in AI and Deep Learning with a focus on Neural Architectures. Currently maintaining a high academic standing with multiple semester honors.",
+      highlights: [
+        "Final Year Project: AI-Powered Chatbot for University Rules",
+        "Stack: MERN Stack & RAG Integration with Advanced NLP APIs",
+        "Goal: Automated compliance and policy navigation for academic administration",
+        "Honors: Multiple Dean's List Awards & Merit Scholarship Recipient",
+        "Leadership: AI Research Club and Technical Hackathon Lead"
+      ],
+      technicalFocus: ["Neural Networks", "RAG Optimization", "Full Stack Engineering", "Cloud AI"]
     }
   ],
   research: [
-    { title: "Natural Language Processing", icon: MessagesSquare, description: "Advanced text analysis, sentiment classification, and language generation models." },
-    { title: "RAG Systems", icon: Database, description: "Retrieval-Augmented Generation for fact-based, context-aware AI applications." },
-    { title: "Semantic Search", icon: Search, description: "Implementing vector databases to enable deep semantic understanding of queries." },
-    { title: "Information Retrieval", icon: Server, description: "Designing scalable architectures for rapid and accurate data extraction." },
-    { title: "LLM Applications", icon: Brain, description: "Fine-tuning and deploying Large Language Models for specialized domain tasks." },
+    { title: "Natural Language Processing", icon: MessagesSquare, description: "Engineering sophisticated transformer-based architectures for advanced semantic understanding and context-aware generation." },
+    { title: "Computer Vision", icon: ScanFace, description: "Developing state-of-the-art vision models for real-time spatial intelligence, neural rendering, and biometric identification." },
+    { title: "Medical Deep Learning", icon: Activity, description: "Architecting high-precision diagnostic systems using deep neural networks for medical imaging and predictive pathology." },
+    { title: "Image Processing", icon: Image, description: "Implementing advanced mathematical frameworks for computational photography, multi-spectral restoration, and feature extraction." },
+    { title: "RAG Systems", icon: Database, description: "Optimizing Retrieval-Augmented Generation pipelines with vector databases to bridge the gap between static LLMs and dynamic knowledge bases." },
+    { title: "LLM Applications", icon: Brain, description: "Strategizing and deploying industrial-scale LLM solutions through parameter-efficient fine-tuning and robust prompt engineering." },
+    { title: "Distributed Neural Systems", icon: Cpu, description: "Optimizing large-scale model inference and training across heterogeneous distributed hardware and edge devices." },
+    { title: "AI-Native Architectures", icon: Server, description: "Designing web ecosystems where agentic AI is integrated at the core architecture layer for real-time cognitive responses." },
+    { title: "Generative Neural Networks", icon: Code2, description: "Researching high-fidelity synthetic data generation and cross-domain image translation using advanced GAN architectures." }
   ],
   certifications: [
     {
@@ -108,7 +166,7 @@ export const portfolioData = {
       title: "AWS Certified Machine Learning – Specialty",
       issuer: "Amazon Web Services",
       date: "2023",
-      image: "https://images.unsplash.com/photo-1523580494112-071d222272e5?auto=format&fit=crop&q=80&w=600",
+      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=600",
       link: "#"
     },
     {
