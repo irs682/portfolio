@@ -2,7 +2,7 @@ import React, { useCallback, useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useSpring, useMotionValue, AnimatePresence } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import { ArrowRight, Download, MousePointer2, Sparkles, ShieldCheck, Zap, Brain, Code2, Database } from 'lucide-react';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import { portfolioData } from '../data/portfolioData';
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
@@ -188,21 +188,26 @@ const HeroSection = () => {
             </motion.p>
 
             <motion.div variants={itemVariants} className="flex flex-wrap gap-6 items-center justify-center lg:justify-start mb-16">
-              <MagneticButton href="#projects" className="group relative px-10 py-5 rounded-2xl bg-slate-950 text-white font-bold overflow-hidden shadow-2xl transition-all">
+              <MagneticButton href="#contact" className="group relative px-10 py-5 rounded-2xl bg-slate-950 text-white font-bold overflow-hidden shadow-2xl transition-all">
                 <span className="relative z-10 flex items-center gap-3 text-sm">
-                  View Projects <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                  Hire Me <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-primary-400 opacity-0 group-hover:opacity-100 transition-opacity" />
               </MagneticButton>
 
-              <MagneticButton href="#contact" className="px-10 py-5 rounded-2xl border-2 border-slate-200 text-slate-900 font-bold hover:border-slate-400 transition-all flex items-center gap-3 bg-white/50 backdrop-blur-sm">
+              <MagneticButton href="#projects" className="px-10 py-5 rounded-2xl border-2 border-slate-200 text-slate-900 font-bold hover:border-slate-400 transition-all flex items-center gap-3 bg-white/50 backdrop-blur-sm">
+                <span className="text-sm">View Projects</span>
+              </MagneticButton>
+
+              <MagneticButton href="/resume.pdf" className="px-10 py-5 rounded-2xl bg-primary-50 text-primary-600 font-bold hover:bg-primary-100 transition-all flex items-center gap-3 border border-primary-200">
                 <Download size={20} /> <span className="text-sm">Resume</span>
               </MagneticButton>
 
               <div className="flex items-center gap-6 w-full lg:w-auto justify-center lg:justify-start mt-4 lg:mt-0">
                 {[
                   { icon: FaGithub, href: portfolioData.personal.contact.github },
-                  { icon: FaLinkedin, href: portfolioData.personal.contact.linkedin }
+                  { icon: FaLinkedin, href: portfolioData.personal.contact.linkedin },
+                  { icon: FaWhatsapp, href: `https://wa.me/${portfolioData.personal.contact.phone.replace(/\D/g,'')}` }
                 ].map((social, idx) => (
                   <motion.a
                     key={idx}

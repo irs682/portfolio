@@ -16,6 +16,8 @@ import TechMarquee from './components/TechMarquee';
 import GithubStats from './components/GithubStats';
 import StatsCounter from './components/StatsCounter';
 import TestimonialsSection from './components/TestimonialsSection';
+import Preloader from './components/Preloader';
+import ServicesSection from './components/ServicesSection';
 import MethodologySection from './components/MethodologySection';
 import CorePhilosophySection from './components/CorePhilosophySection';
 import StrategicImpactSection from './components/StrategicImpactSection';
@@ -68,6 +70,7 @@ function App() {
 
   return (
     <div className="relative selection:bg-primary-500/20 selection:text-primary-900 bg-slate-50 min-h-screen text-slate-900 overflow-x-hidden">
+      <Preloader />
       <NoiseOverlay />
       
       {/* Scroll Progress Bar */}
@@ -91,6 +94,7 @@ function App() {
 
         <SectionWrapper id="about"><AboutSection isLight={true} /></SectionWrapper>
         <SectionWrapper><CorePhilosophySection isLight={true} /></SectionWrapper>
+        <SectionWrapper id="services"><ServicesSection isLight={true} /></SectionWrapper>
         <SectionWrapper><StatsCounter isLight={true} /></SectionWrapper>
         <SectionWrapper id="skills"><SkillsSection isLight={true} /></SectionWrapper>
         <SectionWrapper><GithubStats isLight={true} /></SectionWrapper>
