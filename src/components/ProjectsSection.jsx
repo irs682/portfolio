@@ -15,7 +15,7 @@ const ProjectsSection = () => {
     : portfolioData.projects.filter(p => p.category === filter);
 
   return (
-    <section id="projects" className="py-32 relative overflow-hidden bg-slate-50/30">
+    <section id="projects" className="py-32 relative overflow-hidden bg-slate-50/30 dark:bg-slate-950 transition-colors duration-500">
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
           <div>
@@ -30,7 +30,7 @@ const ProjectsSection = () => {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.1 }}
-              className="section-title !text-left !mb-0"
+              className="section-title !text-left !mb-0 dark:text-white"
             >
               Strategic <span className="text-gradient">Innovations</span>
             </motion.h2>
@@ -47,8 +47,8 @@ const ProjectsSection = () => {
                 onClick={() => setFilter(cat)}
                 className={`px-8 py-3 rounded-full text-[10px] font-black tracking-[0.2em] uppercase transition-all duration-500 border ${
                   filter === cat 
-                    ? 'bg-slate-950 text-white border-slate-950 shadow-xl' 
-                    : 'bg-white text-slate-400 border-slate-200 hover:text-slate-950 hover:border-slate-400'
+                    ? 'bg-slate-950 dark:bg-white text-white dark:text-slate-950 border-slate-950 dark:border-white shadow-xl' 
+                    : 'bg-white dark:bg-slate-900 text-slate-400 dark:text-slate-500 border-slate-200 dark:border-slate-800 hover:text-slate-950 dark:hover:text-white hover:border-slate-400 dark:hover:border-slate-600 shadow-sm'
                 }`}
               >
                 {cat}

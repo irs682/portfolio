@@ -66,30 +66,29 @@ const HeroSection = () => {
       id="hero"
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      className="relative min-h-screen flex items-center pt-24 overflow-hidden bg-slate-50"
+      className="relative min-h-screen flex items-center pt-24 overflow-hidden bg-slate-50 transition-colors duration-500"
     >
-      {/* Background Blobs */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            rotate: [0, 90, 0],
-            x: [0, 50, 0],
-            y: [0, -50, 0],
-          }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-indigo-500/10 rounded-full blur-[120px]"
-        />
+      {/* Decorative Background - Inspired by User Image */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           animate={{
             scale: [1, 1.1, 1],
-            rotate: [0, -90, 0],
-            x: [0, -30, 0],
-            y: [0, 40, 0],
+            x: [0, 30, 0],
+            y: [0, -20, 0],
           }}
-          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-[-10%] right-[-10%] w-[700px] h-[700px] bg-cyan-500/10 rounded-full blur-[140px]"
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-[-10%] right-[-5%] w-[800px] h-[800px] bg-indigo-100/40 dark:bg-indigo-900/10 rounded-full blur-[120px]"
         />
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            x: [0, -40, 0],
+            y: [0, 30, 0],
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute bottom-[-10%] left-[-5%] w-[600px] h-[600px] bg-primary-100/30 dark:bg-primary-900/10 rounded-full blur-[100px]"
+        />
+        <div className="absolute top-1/4 left-1/4 w-[300px] h-[300px] bg-secondary-100/20 dark:bg-secondary-900/10 rounded-full blur-[80px]" />
       </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">

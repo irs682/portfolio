@@ -8,10 +8,10 @@ const CertificationsSection = () => {
   const [selectedCert, setSelectedCert] = useState(null);
 
   return (
-    <section id="certifications" className="py-32 relative overflow-hidden bg-white">
+    <section id="certifications" className="py-32 relative overflow-hidden bg-white dark:bg-slate-950 transition-colors duration-500">
       {/* Background elements */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-slate-50 -z-10" />
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[600px] h-[600px] bg-primary-100/20 rounded-full blur-[120px] -z-10" />
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-slate-50 dark:bg-slate-900/10 -z-10" />
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[600px] h-[600px] bg-primary-100/20 dark:bg-primary-900/10 rounded-full blur-[120px] -z-10" />
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="flex flex-col items-center text-center mb-24">
@@ -26,7 +26,7 @@ const CertificationsSection = () => {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="section-title"
+            className="section-title dark:text-white"
           >
             Global <span className="text-gradient">Certifications</span>
           </motion.h2>
@@ -55,12 +55,12 @@ const CertificationsSection = () => {
                 glarePosition="all"
                 className="h-full"
               >
-                <div className="glass-card h-full flex flex-col group overflow-hidden border-slate-200/50 bg-white/50 backdrop-blur-sm rounded-[2.5rem] hover:bg-white transition-all duration-700 hover:shadow-2xl hover:shadow-primary-500/10">
+                <div className="glass-card h-full flex flex-col group overflow-hidden border-slate-200/50 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm rounded-[2.5rem] hover:bg-white dark:hover:bg-slate-900 transition-all duration-700 hover:shadow-2xl hover:shadow-primary-500/10">
                   <div 
                     className="relative aspect-[16/10] overflow-hidden p-4 group/image cursor-pointer"
                     onClick={() => setSelectedCert(cert)}
                   >
-                    <div className="w-full h-full rounded-[2rem] overflow-hidden relative bg-slate-950">
+                    <div className="w-full h-full rounded-[2rem] overflow-hidden relative bg-slate-950 dark:bg-black">
                       <img 
                         src={cert.image} 
                         alt={cert.title} 
@@ -70,7 +70,7 @@ const CertificationsSection = () => {
                       
                       {/* Zoom Overlay */}
                       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/image:opacity-100 transition-opacity duration-500 bg-slate-950/20 backdrop-blur-[2px]">
-                        <div className="w-14 h-14 rounded-2xl bg-white/90 shadow-2xl flex items-center justify-center text-slate-900">
+                        <div className="w-14 h-14 rounded-2xl bg-white/90 dark:bg-white/10 shadow-2xl flex items-center justify-center text-slate-900 dark:text-white backdrop-blur-md">
                           <ZoomIn size={24} />
                         </div>
                       </div>
@@ -85,29 +85,29 @@ const CertificationsSection = () => {
 
                   <div className="p-10 flex flex-col flex-grow">
                     <div className="flex items-center gap-2 mb-4">
-                      <span className="px-3 py-1 bg-primary-50 text-primary-600 text-[10px] font-black uppercase tracking-widest rounded-lg border border-primary-100">
+                      <span className="px-3 py-1 bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-[10px] font-black uppercase tracking-widest rounded-lg border border-primary-100 dark:border-primary-800">
                         Official ID
                       </span>
-                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{cert.date}</span>
+                      <span className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest">{cert.date}</span>
                     </div>
 
-                    <h3 className="text-xl font-black text-slate-950 mb-3 group-hover:text-primary-600 transition-colors leading-tight">
+                    <h3 className="text-xl font-black text-slate-950 dark:text-white mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors leading-tight">
                       {cert.title}
                     </h3>
-                    <p className="text-slate-500 text-sm font-medium mb-8 flex-grow">
-                      Issued by <span className="text-slate-950 font-bold">{cert.issuer}</span>
+                    <p className="text-slate-500 dark:text-slate-400 text-sm font-medium mb-8 flex-grow">
+                      Issued by <span className="text-slate-950 dark:text-white font-bold">{cert.issuer}</span>
                     </p>
                     
-                    <div className="flex items-center justify-between pt-6 border-t border-slate-100">
+                    <div className="flex items-center justify-between pt-6 border-t border-slate-100 dark:border-slate-800">
                       <div className="flex items-center gap-2">
-                        <Sparkles size={14} className="text-primary-500" />
-                        <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Verified Badge</span>
+                        <Sparkles size={14} className="text-primary-500 dark:text-primary-400" />
+                        <span className="text-[10px] font-black text-slate-400 dark:text-slate-600 uppercase tracking-widest">Verified Badge</span>
                       </div>
                       <a 
                         href={cert.link}
                         target="_blank"
                         rel="noreferrer"
-                        className="p-3 rounded-xl bg-slate-950 text-white hover:bg-primary-600 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/20"
+                        className="p-3 rounded-xl bg-slate-950 dark:bg-white text-white dark:text-slate-950 hover:bg-primary-600 dark:hover:bg-primary-400 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/20"
                         onClick={(e) => e.stopPropagation()}
                       >
                         <ExternalLink size={18} />

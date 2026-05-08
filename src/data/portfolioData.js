@@ -116,7 +116,7 @@ export const portfolioData = {
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
     },
     {
-      id: 1,
+      id: 7,
       title: "Smart AI Chatbot for University",
       category: "AI/ML",
       isFeatured: true,
@@ -128,7 +128,7 @@ export const portfolioData = {
       features: ["PDF Parsing", "Knowledge Graph", "Real-time AI Responses"]
     },
     {
-      id: 7,
+      id: 8,
       title: "AI-Powered Image Analytics",
       description: "A sophisticated computer vision system for real-time object detection and semantic segmentation, optimized for edge devices.",
       category: "AI/ML",
