@@ -24,7 +24,7 @@ const ProjectsSection = () => {
               whileInView={{ opacity: 1, x: 0 }}
               className="section-subtitle !text-left"
             >
-              Portfolio
+              Work
             </motion.span>
             <motion.h2 
               initial={{ opacity: 0, x: -20 }}

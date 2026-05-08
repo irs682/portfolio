@@ -130,43 +130,54 @@ const HeroSection = () => {
               className="text-4xl sm:text-5xl md:text-[85px] font-display font-black tracking-tighter mb-8 leading-[0.9] text-slate-950"
             >
               <motion.span 
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
                 className="block"
               >
-                Engineering
+                Architecting
               </motion.span>
               <motion.span 
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.7 }}
                 className="text-gradient drop-shadow-sm block"
               >
-                Intelligence
+                Industrial AI.
               </motion.span>
               <motion.span 
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.9 }}
                 className="block text-slate-800"
               >
-                with Neural Precision.
+                Forging Scalable Impact.
               </motion.span>
             </motion.h1>
 
             <motion.div
               variants={itemVariants}
-              className="text-xl md:text-2xl font-semibold text-slate-500 mb-10 h-12 flex items-center"
+              className="text-2xl md:text-3xl font-black mb-10 h-16 flex items-center"
             >
-              <span className="mr-3 text-slate-300">/</span>
-              <TypeAnimation
-                sequence={portfolioData.personal.titles}
-                wrapper="span"
-                speed={50}
-                repeat={Infinity}
-                className="text-slate-800 font-display italic"
-              />
+              <div className="relative flex items-center">
+                <span className="mr-4 text-slate-300 font-light text-4xl">/</span>
+                <div className="relative">
+                  <TypeAnimation
+                    sequence={portfolioData.personal.titles}
+                    wrapper="span"
+                    speed={50}
+                    repeat={Infinity}
+                    className="text-slate-950 font-display uppercase tracking-tight"
+                  />
+                  {/* Decorative underline */}
+                  <motion.div 
+                    initial={{ width: 0 }}
+                    animate={{ width: "100%" }}
+                    transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
+                    className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-primary-600 to-transparent rounded-full"
+                  />
+                </div>
+              </div>
             </motion.div>
 
             <motion.p

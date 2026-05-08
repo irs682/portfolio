@@ -16,7 +16,9 @@ import TechMarquee from './components/TechMarquee';
 import GithubStats from './components/GithubStats';
 import StatsCounter from './components/StatsCounter';
 import TestimonialsSection from './components/TestimonialsSection';
-import GlobeSection from './components/GlobeSection';
+import MethodologySection from './components/MethodologySection';
+import CorePhilosophySection from './components/CorePhilosophySection';
+import StrategicImpactSection from './components/StrategicImpactSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import CinematicReveal from './components/CinematicReveal';
@@ -88,15 +90,17 @@ function App() {
         </div>
 
         <SectionWrapper id="about"><AboutSection isLight={true} /></SectionWrapper>
+        <SectionWrapper><CorePhilosophySection isLight={true} /></SectionWrapper>
         <SectionWrapper><StatsCounter isLight={true} /></SectionWrapper>
         <SectionWrapper id="skills"><SkillsSection isLight={true} /></SectionWrapper>
         <SectionWrapper><GithubStats isLight={true} /></SectionWrapper>
         <SectionWrapper id="projects"><ProjectsSection isLight={true} /></SectionWrapper>
         <SectionWrapper id="experience"><ExperienceSection isLight={true} /></SectionWrapper>
+        <SectionWrapper id="methodology"><MethodologySection isLight={true} /></SectionWrapper>
         <SectionWrapper id="education"><EducationResearchSection isLight={true} /></SectionWrapper>
         <SectionWrapper id="certifications"><CertificationsSection isLight={true} /></SectionWrapper>
         <SectionWrapper id="testimonials"><TestimonialsSection isLight={true} /></SectionWrapper>
-        <SectionWrapper id="globe"><GlobeSection isLight={true} /></SectionWrapper>
+        <SectionWrapper id="strategic-impact"><StrategicImpactSection isLight={true} /></SectionWrapper>
         <SectionWrapper id="contact"><ContactSection isLight={true} /></SectionWrapper>
       </main>
 

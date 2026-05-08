@@ -9,18 +9,12 @@ export const portfolioData = {
       "/assets/imge3.jpg"
     ],
     titles: [
-      "AI Engineer",
-      1000,
-      "Computer Vision Specialist",
-      1000,
-      "Medical AI Researcher",
-      1000,
-      "MERN Stack Developer",
-      1000,
-      "NLP Researcher",
-      1000,
-      "Full Stack Developer",
-      1000
+      "MERN Stack Architect", 2000,
+      "AI Systems Engineer", 2000,
+      "NLP Research Scientist", 2000,
+      "Computer Vision Expert", 2000,
+      "Cloud Solutions Specialist", 2000,
+      "Full Stack Visionary", 2000
     ],
     bio: "I am a high-performance AI Engineer and Full-Stack Developer specializing in the intersection of Neural Architectures and Scalable Systems. With a focus on Deep Learning and Web Scraping, I engineer intelligent data pipelines and RAG-driven applications that transform raw data into strategic insights. My mission is to bridge the gap between complex research and deployable, user-centric technology.",
     contact: {
@@ -130,17 +124,43 @@ export const portfolioData = {
   experience: [
     {
       id: 1,
-      role: "AI & Web Development Intern",
-      company: "UET Mardan",
-      date: "2023 - Present",
-      description: "Worked on integrating AI models into web interfaces. Developed internal tools using the MERN stack and assisted in machine learning research projects."
+      role: "Full-Stack Developer Intern",
+      company: "DevelopersHub Corporation",
+      date: "March 2026 - April 2026",
+      description: "Successfully completed a 6-week intensive internship program in Full Stack Development with exceptional performance. Awarded the 'Best Award' for outstanding contributions and technical skills.",
+      achievements: [
+        "Received 'Best Award' for exceptional internship performance",
+        "Engineered full-stack solutions during an intensive 6-week program",
+        "Demonstrated significant contributions to corporate-level projects"
+      ],
+      tech: ["React.js", "Node.js", "Express", "MongoDB", "Full Stack"]
     },
     {
       id: 2,
+      role: "AI & Web Development Intern",
+      company: "UET Mardan (Career Launchpad)",
+      date: "2023 - Present",
+      description: "Integrating state-of-the-art AI models into production-ready web interfaces and collaborating on machine learning research.",
+      achievements: [
+        "Architecting and deploying industrial-grade web applications using the MERN stack",
+        "Engineering scalable backend services with Node.js and Express.js",
+        "Managing complex data structures and optimizing queries with MongoDB",
+        "Developing high-performance, reactive user interfaces with React.js"
+      ],
+      tech: ["MongoDB", "Express", "React", "Node.js", "MERN Stack"]
+    },
+    {
+      id: 3,
       role: "Web Development Intern",
       company: "Hamdan Digital Marketing",
       date: "2022 - 2023",
-      description: "Built responsive websites, optimized frontend performance, and collaborated with the design team to implement modern user interfaces."
+      description: "Built responsive websites and optimized frontend performance for diverse client requirements.",
+      achievements: [
+        "Developed 10+ responsive websites with mobile-first architecture",
+        "Improved PageSpeed insights scores by an average of 25 points",
+        "Collaborated with UI/UX designers to implement high-fidelity Figma designs"
+      ],
+      tech: ["HTML5", "CSS3", "JavaScript", "Tailwind CSS", "WordPress"]
     }
   ],
   education: [
@@ -161,19 +181,42 @@ export const portfolioData = {
     }
   ],
   research: [
-    { title: "Natural Language Processing", icon: MessagesSquare, description: "Engineering sophisticated transformer-based architectures for advanced semantic understanding and context-aware generation." },
-    { title: "Computer Vision", icon: ScanFace, description: "Developing state-of-the-art vision models for real-time spatial intelligence, neural rendering, and biometric identification." },
-    { title: "Medical Deep Learning", icon: Activity, description: "Architecting high-precision diagnostic systems using deep neural networks for medical imaging and predictive pathology." },
-    { title: "Image Processing", icon: Image, description: "Implementing advanced mathematical frameworks for computational photography, multi-spectral restoration, and feature extraction." },
-    { title: "RAG Systems", icon: Database, description: "Optimizing Retrieval-Augmented Generation pipelines with vector databases to bridge the gap between static LLMs and dynamic knowledge bases." },
-    { title: "LLM Applications", icon: Brain, description: "Strategizing and deploying industrial-scale LLM solutions through parameter-efficient fine-tuning and robust prompt engineering." },
-    { title: "Distributed Neural Systems", icon: Cpu, description: "Optimizing large-scale model inference and training across heterogeneous distributed hardware and edge devices." },
-    { title: "AI-Native Architectures", icon: Server, description: "Designing web ecosystems where agentic AI is integrated at the core architecture layer for real-time cognitive responses." },
-    { title: "Generative Neural Networks", icon: Code2, description: "Researching high-fidelity synthetic data generation and cross-domain image translation using advanced GAN architectures." }
+    {
+      title: "Natural Language Processing",
+      description: "Exploring Large Language Models (LLMs), RAG architectures, and fine-tuning techniques for specialized domain knowledge retrieval.",
+      icon: "MessageSquare",
+      focus: ["LLMs", "RAG", "Fine-tuning"]
+    },
+    {
+      title: "Computer Vision",
+      description: "Researching real-time object detection, semantic segmentation, and edge deployment for autonomous surveillance systems.",
+      icon: "Camera",
+      focus: ["YOLO", "Segmentation", "Edge AI"]
+    },
+    {
+      title: "Full Stack Ecosystems",
+      description: "Developing scalable microservices architectures and optimizing MERN stack performance for high-concurrency environments.",
+      icon: "Layers",
+      focus: ["Microservices", "Scalability", "Optimization"]
+    },
+    {
+      title: "AI Compliance & Ethics",
+      description: "Investigating automated policy navigation and ethical framework integration in AI-driven administrative systems.",
+      icon: "Shield",
+      focus: ["Ethics", "Compliance", "Policy"]
+    }
   ],
   certifications: [
     {
       id: 1,
+      title: "Full Stack Development (Best Award)",
+      issuer: "DevelopersHub Corporation",
+      date: "2026",
+      image: "/assets/certi.jpg",
+      link: "#"
+    },
+    {
+      id: 2,
       title: "AWS Certified Machine Learning – Specialty",
       issuer: "Amazon Web Services",
       date: "2023",
@@ -181,7 +224,7 @@ export const portfolioData = {
       link: "#"
     },
     {
-      id: 2,
+      id: 3,
       title: "Deep Learning Specialization",
       issuer: "Coursera (deeplearning.ai)",
       date: "2022",
@@ -189,7 +232,7 @@ export const portfolioData = {
       link: "#"
     },
     {
-      id: 3,
+      id: 4,
       title: "Meta Front-End Developer Professional Certificate",
       issuer: "Meta",
       date: "2023",

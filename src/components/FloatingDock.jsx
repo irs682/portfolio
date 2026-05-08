@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { User, Code, Briefcase, GraduationCap, Award, MessageSquare, Home, Globe } from 'lucide-react';
+import { Home, User, Code, Briefcase, GraduationCap, Award, MessageSquare, Target, Workflow, Layout, History } from 'lucide-react';
 
 const FloatingDock = ({ isLight = false }) => {
   const [activeSection, setActiveSection] = useState('hero');
@@ -9,8 +9,10 @@ const FloatingDock = ({ isLight = false }) => {
     { id: 'hero', icon: <Home size={20} />, label: 'Intro' },
     { id: 'about', icon: <User size={20} />, label: 'About' },
     { id: 'skills', icon: <Code size={20} />, label: 'Skills' },
-    { id: 'projects', icon: <Briefcase size={20} />, label: 'Work' },
-    { id: 'experience', icon: <Globe size={20} />, label: 'Journey' },
+    { id: 'projects', icon: <Layout size={20} />, label: 'Work' },
+    { id: 'experience', icon: <History size={20} />, label: 'Experience' },
+    { id: 'methodology', icon: <Workflow size={20} />, label: 'Process' },
+    { id: 'strategic-impact', icon: <Target size={20} />, label: 'Impact' },
     { id: 'education', icon: <GraduationCap size={20} />, label: 'Education' },
     { id: 'certifications', icon: <Award size={20} />, label: 'Certs' },
     { id: 'contact', icon: <MessageSquare size={20} />, label: 'Connect' },
