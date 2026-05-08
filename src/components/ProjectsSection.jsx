@@ -67,17 +67,20 @@ const ProjectsSection = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.5, delay: idx * 0.05 }}
+                className={project.isFeatured ? "md:col-span-2 lg:col-span-2" : ""}
               >
                 <Tilt
-                  tiltMaxAngleX={5}
-                  tiltMaxAngleY={5}
+                  tiltMaxAngleX={project.isFeatured ? 2 : 5}
+                  tiltMaxAngleY={project.isFeatured ? 2 : 5}
                   glareEnable={true}
                   glareMaxOpacity={0.05}
                   glarePosition="all"
                   className="h-full"
                 >
-                  <div className="glass-card h-full flex flex-col group overflow-hidden border-slate-200/50 bg-white/50 backdrop-blur-sm rounded-[2.5rem] hover:bg-white transition-all duration-700">
-                    <div className="relative aspect-[4/3] overflow-hidden p-4">
+                  <div className={`glass-card h-full flex flex-col group overflow-hidden border-slate-200/50 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm rounded-[2.5rem] hover:bg-white dark:hover:bg-slate-900 transition-all duration-700 ${
+                    project.isFeatured ? "border-primary-500/30 ring-1 ring-primary-500/10 shadow-2xl shadow-primary-500/10" : ""
+                  }`}>
+                    <div className={`relative ${project.isFeatured ? "aspect-[21/9]" : "aspect-[4/3]"} overflow-hidden p-4`}>
                       <div className="w-full h-full rounded-[2rem] overflow-hidden relative">
                         <img 
                           src={project.image} 
@@ -87,42 +90,49 @@ const ProjectsSection = () => {
                         <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors duration-700" />
                       </div>
                       
-                      <div className="absolute top-8 right-8">
+                      <div className="absolute top-8 left-8 right-8 flex flex-wrap justify-end gap-2 pointer-events-none">
+                        {project.isFeatured && (
+                          <span className="bg-primary-600 text-white text-[9px] font-black px-4 py-2 rounded-full uppercase tracking-widest flex items-center gap-2 shadow-xl animate-pulse">
+                            <Sparkles size={12} /> Main Highlight
+                          </span>
+                        )}
                          <span className="bg-slate-950/80 backdrop-blur-md text-white text-[9px] font-black px-4 py-2 rounded-full uppercase tracking-widest border border-white/20">
                           {project.category}
                         </span>
                       </div>
                     </div>
 
-                    <div className="p-10 pt-4 flex flex-col flex-grow">
+                    <div className={`p-10 pt-4 flex flex-col flex-grow ${project.isFeatured ? "lg:p-12" : ""}`}>
                       <div className="flex items-center gap-3 mb-6">
                         <span className="w-1.5 h-1.5 rounded-full bg-primary-500 animate-pulse" />
-                        <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Case Study // {String(project.id).padStart(2, '0')}</span>
+                        <span className="text-[10px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest">
+                          {project.isFeatured ? "Final Year Project // Flagship" : `Case Study // ${String(project.id).padStart(2, '0')}`}
+                        </span>
                       </div>
 
-                      <h3 className="text-3xl font-display font-black mb-4 text-slate-950 tracking-tighter group-hover:text-primary-600 transition-colors">
+                      <h3 className={`${project.isFeatured ? "text-4xl lg:text-5xl" : "text-3xl"} font-display font-black mb-4 text-slate-950 dark:text-white tracking-tighter group-hover:text-primary-600 transition-colors`}>
                         {project.title}
                       </h3>
                       
-                      <p className="text-slate-500 text-sm leading-relaxed mb-8 flex-grow font-medium line-clamp-3">
+                      <p className={`text-slate-500 dark:text-slate-400 mb-8 flex-grow font-medium ${project.isFeatured ? "text-lg leading-relaxed max-w-2xl" : "text-sm leading-relaxed line-clamp-3"}`}>
                         {project.description}
                       </p>
                       
                       <div className="flex flex-wrap gap-2 mb-10">
                         {project.tech.map((t, i) => (
-                          <span key={i} className="text-[9px] px-3 py-1.5 rounded-lg bg-slate-100 text-slate-500 font-bold uppercase tracking-wider">
+                          <span key={i} className="text-[9px] px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider border border-slate-200/50 dark:border-slate-700/50">
                             {t}
                           </span>
                         ))}
                       </div>
 
-                      <div className="flex gap-8 mt-auto pt-8 border-t border-slate-100/60">
+                      <div className="flex gap-8 mt-auto pt-8 border-t border-slate-100/60 dark:border-slate-800">
                         <motion.a 
                           whileHover={{ x: 3 }}
                           href={project.github}
                           target="_blank"
                           rel="noreferrer"
-                          className="flex items-center gap-2 text-[10px] font-black text-slate-400 hover:text-slate-950 transition-colors uppercase tracking-widest"
+                          className="flex items-center gap-2 text-[10px] font-black text-slate-400 dark:text-slate-600 hover:text-slate-950 dark:hover:text-white transition-colors uppercase tracking-widest"
                         >
                           <FaGithub size={16} /> Source
                         </motion.a>
@@ -131,7 +141,7 @@ const ProjectsSection = () => {
                           href={project.demo}
                           target="_blank"
                           rel="noreferrer"
-                          className="flex items-center gap-2 text-[10px] font-black text-primary-600 hover:text-primary-700 transition-colors uppercase tracking-widest ml-auto"
+                          className="flex items-center gap-2 text-[10px] font-black text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors uppercase tracking-widest ml-auto"
                         >
                           Live Preview <Plus size={14} />
                         </motion.a>

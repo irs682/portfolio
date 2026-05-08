@@ -116,6 +116,18 @@ export const portfolioData = {
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
     },
     {
+      id: 1,
+      title: "Smart AI Chatbot for University",
+      category: "AI/ML",
+      isFeatured: true,
+      description: "A high-performance RAG-based AI system engineered for automated knowledge extraction from university PDF assets. Features advanced NLP logic for student inquiry resolution and MERN stack integration.",
+      tech: ["LangChain", "OpenAI", "React", "Node.js", "MongoDB"],
+      image: "/assets/chat_dashboard.png",
+      github: "https://github.com/irs682",
+      demo: "https://irshadamin223.netlify.app/",
+      features: ["PDF Parsing", "Knowledge Graph", "Real-time AI Responses"]
+    },
+    {
       id: 7,
       title: "AI-Powered Image Analytics",
       description: "A sophisticated computer vision system for real-time object detection and semantic segmentation, optimized for edge devices.",

@@ -6,7 +6,7 @@ const CustomCursor = () => {
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
 
-  const springConfig = { damping: 25, stiffness: 150 };
+  const springConfig = { damping: 25, stiffness: 200 };
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
 
@@ -43,25 +43,25 @@ const CustomCursor = () => {
   return (
     <>
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 border border-primary-500/50 rounded-full pointer-events-none z-[9999] hidden md:block"
+        className="fixed top-0 left-0 w-8 h-8 border border-primary-500/30 rounded-full pointer-events-none z-[9999] hidden md:block"
         style={{
           x: cursorXSpring,
           y: cursorYSpring,
           translateX: '-50%',
           translateY: '-50%',
-          scale: isHovered ? 2 : 1,
-          backgroundColor: isHovered ? 'rgba(79, 70, 229, 0.05)' : 'transparent',
+          scale: isHovered ? 2.5 : 1,
+          backgroundColor: isHovered ? 'rgba(79, 70, 229, 0.03)' : 'transparent',
+          borderColor: isHovered ? 'rgba(79, 70, 229, 0.5)' : 'rgba(79, 70, 229, 0.3)',
         }}
-        transition={{ type: 'spring', damping: 20, stiffness: 200 }}
       />
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 bg-primary-600 rounded-full pointer-events-none z-[9999] hidden md:block shadow-[0_0_10px_rgba(79,70,229,0.5)]"
+        className="fixed top-0 left-0 w-1.5 h-1.5 bg-primary-600 rounded-full pointer-events-none z-[9999] hidden md:block"
         style={{
           x: cursorX,
           y: cursorY,
           translateX: '-50%',
           translateY: '-50%',
-          scale: isHovered ? 0.5 : 1,
+          opacity: isHovered ? 0.5 : 1,
         }}
       />
     </>
