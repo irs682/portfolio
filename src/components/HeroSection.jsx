@@ -127,7 +127,7 @@ const HeroSection = () => {
 
             <motion.h1
               variants={itemVariants}
-              className="text-4xl sm:text-5xl md:text-[85px] font-display font-black tracking-tighter mb-8 leading-[0.9] text-slate-950"
+              className="text-5xl sm:text-6xl md:text-[80px] font-display font-black tracking-tighter mb-8 leading-[1.1] text-slate-950 dark:text-white"
             >
               <motion.span 
                 initial={{ opacity: 0, y: 20 }}
@@ -135,7 +135,7 @@ const HeroSection = () => {
                 transition={{ duration: 0.8, delay: 0.5 }}
                 className="block"
               >
-                Architecting
+                AI Engineer &
               </motion.span>
               <motion.span 
                 initial={{ opacity: 0, y: 20 }}
@@ -143,15 +143,15 @@ const HeroSection = () => {
                 transition={{ duration: 0.8, delay: 0.7 }}
                 className="text-gradient drop-shadow-sm block"
               >
-                Industrial AI.
+                MERN Developer.
               </motion.span>
               <motion.span 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.9 }}
-                className="block text-slate-800"
+                className="block text-slate-500 dark:text-slate-400 text-2xl md:text-4xl mt-6 font-medium tracking-normal"
               >
-                Forging Scalable Impact.
+                Building Intelligent Web Applications.
               </motion.span>
             </motion.h1>
 
@@ -160,14 +160,14 @@ const HeroSection = () => {
               className="text-2xl md:text-3xl font-black mb-10 h-16 flex items-center"
             >
               <div className="relative flex items-center">
-                <span className="mr-4 text-slate-300 font-light text-4xl">/</span>
+                <span className="mr-4 text-slate-300 dark:text-slate-700 font-light text-4xl">/</span>
                 <div className="relative">
                   <TypeAnimation
                     sequence={portfolioData.personal.titles}
                     wrapper="span"
                     speed={50}
                     repeat={Infinity}
-                    className="text-slate-950 font-display uppercase tracking-tight"
+                    className="text-slate-950 dark:text-white font-display uppercase tracking-tight"
                   />
                   {/* Decorative underline */}
                   <motion.div 
@@ -182,24 +182,24 @@ const HeroSection = () => {
 
             <motion.p
               variants={itemVariants}
-              className="text-lg text-slate-500 mb-12 leading-relaxed max-w-xl font-medium opacity-80"
+              className="text-lg text-slate-500 dark:text-slate-400 mb-12 leading-relaxed max-w-xl font-medium opacity-80"
             >
               {portfolioData.personal.bio}
             </motion.p>
 
             <motion.div variants={itemVariants} className="flex flex-wrap gap-6 items-center justify-center lg:justify-start mb-16">
-              <MagneticButton href="#contact" className="group relative px-10 py-5 rounded-2xl bg-slate-950 text-white font-bold overflow-hidden shadow-2xl transition-all">
+              <MagneticButton href="#contact" className="group relative px-10 py-5 rounded-2xl bg-slate-950 dark:bg-white dark:text-slate-950 text-white font-bold overflow-hidden shadow-2xl transition-all">
                 <span className="relative z-10 flex items-center gap-3 text-sm">
                   Hire Me <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-primary-400 opacity-0 group-hover:opacity-100 transition-opacity" />
               </MagneticButton>
 
-              <MagneticButton href="#projects" className="px-10 py-5 rounded-2xl border-2 border-slate-200 text-slate-900 font-bold hover:border-slate-400 transition-all flex items-center gap-3 bg-white/50 backdrop-blur-sm">
+              <MagneticButton href="#projects" className="px-10 py-5 rounded-2xl border-2 border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white font-bold hover:border-slate-400 dark:hover:border-slate-600 transition-all flex items-center gap-3 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm">
                 <span className="text-sm">View Projects</span>
               </MagneticButton>
 
-              <MagneticButton href="/resume.pdf" className="px-10 py-5 rounded-2xl bg-primary-50 text-primary-600 font-bold hover:bg-primary-100 transition-all flex items-center gap-3 border border-primary-200">
+              <MagneticButton href="/resume.pdf" download="resume.pdf" className="px-10 py-5 rounded-2xl bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400 font-bold hover:bg-primary-100 dark:hover:bg-primary-900/40 transition-all flex items-center gap-3 border border-primary-200 dark:border-primary-800">
                 <Download size={20} /> <span className="text-sm">Resume</span>
               </MagneticButton>
 
@@ -214,7 +214,7 @@ const HeroSection = () => {
                     whileHover={{ scale: 1.2, y: -4, color: '#4f46e5' }}
                     href={social.href}
                     target="_blank"
-                    className="text-slate-400 transition-colors"
+                    className="text-slate-400 dark:text-slate-600 transition-colors"
                   >
                     <social.icon size={26} />
                   </motion.a>
@@ -225,7 +225,7 @@ const HeroSection = () => {
             {/* Quick Stats Grid */}
             <motion.div
               variants={itemVariants}
-              className="grid grid-cols-3 gap-12 border-t border-slate-200/60 pt-10"
+              className="grid grid-cols-3 gap-12 border-t border-slate-200 dark:border-slate-800 pt-10"
             >
               {[
                 { val: "1+", label: "Year Exp" },
@@ -233,8 +233,8 @@ const HeroSection = () => {
                 { val: "100%", label: "Satisfaction" }
               ].map((stat, i) => (
                 <div key={i} className="group">
-                  <p className="text-3xl font-black text-slate-950 group-hover:text-primary-600 transition-colors">{stat.val}</p>
-                  <p className="text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em] mt-1">{stat.label}</p>
+                  <p className="text-3xl font-black text-slate-950 dark:text-white group-hover:text-primary-600 transition-colors">{stat.val}</p>
+                  <p className="text-[10px] text-slate-400 dark:text-slate-600 font-bold uppercase tracking-[0.2em] mt-1">{stat.label}</p>
                 </div>
               ))}
             </motion.div>

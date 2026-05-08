@@ -16,6 +16,7 @@ export const portfolioData = {
       "Cloud Solutions Specialist", 2000,
       "Full Stack Visionary", 2000
     ],
+    heading: "AI Engineer & MERN Stack Developer Building Intelligent Web Applications",
     bio: "I am a high-performance AI Engineer and Full-Stack Developer specializing in the intersection of Neural Architectures and Scalable Systems. With a focus on Deep Learning and Web Scraping, I engineer intelligent data pipelines and RAG-driven applications that transform raw data into strategic insights. My mission is to bridge the gap between complex research and deployable, user-centric technology.",
     contact: {
       email: "irshad.uetmardan@gmail.com",
@@ -29,9 +30,14 @@ export const portfolioData = {
     { name: "MongoDB", category: "Backend", level: 90 },
     { name: "Express.js", category: "Backend", level: 88 },
     { name: "React.js", category: "Frontend", level: 95 },
+    { name: "Next.js", category: "Frontend", level: 85 },
     { name: "Node.js", category: "Backend", level: 90 },
     { name: "Python", category: "AI/ML", level: 98 },
+    { name: "OpenCV", category: "AI/ML", level: 90 },
     { name: "Web Scraping", category: "AI/ML", level: 92 },
+    { name: "LangChain", category: "AI/ML", level: 85 },
+    { name: "Postman", category: "Tools", level: 95 },
+    { name: "Git", category: "Tools", level: 92 },
     { name: "Machine Learning", category: "AI/ML", level: 95 },
     { name: "Deep Learning", category: "AI/ML", level: 94 },
     { name: "NLP", category: "AI/ML", level: 95 },

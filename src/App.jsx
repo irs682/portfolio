@@ -16,6 +16,7 @@ import TechMarquee from './components/TechMarquee';
 import GithubStats from './components/GithubStats';
 import StatsCounter from './components/StatsCounter';
 import TestimonialsSection from './components/TestimonialsSection';
+import BackToTop from './components/BackToTop';
 import Preloader from './components/Preloader';
 import ServicesSection from './components/ServicesSection';
 import MethodologySection from './components/MethodologySection';
@@ -69,8 +70,9 @@ function App() {
   }, []);
 
   return (
-    <div className="relative selection:bg-primary-500/20 selection:text-primary-900 bg-slate-50 min-h-screen text-slate-900 overflow-x-hidden">
+    <div className="relative selection:bg-primary-500/20 selection:text-primary-900 bg-slate-50 dark:bg-slate-950 min-h-screen text-slate-900 dark:text-white transition-colors duration-500 overflow-x-hidden">
       <Preloader />
+      <BackToTop />
       <NoiseOverlay />
       
       {/* Scroll Progress Bar */}
