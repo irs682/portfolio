@@ -8,9 +8,11 @@ const FloatingDock = ({ isLight = false }) => {
   const navItems = [
     { id: 'hero', icon: <Home size={20} />, label: 'Intro' },
     { id: 'about', icon: <User size={20} />, label: 'About' },
-    { id: 'skills', icon: <Code size={20} />, label: 'Expertise' },
+    { id: 'skills', icon: <Code size={20} />, label: 'Skills' },
     { id: 'projects', icon: <Briefcase size={20} />, label: 'Work' },
     { id: 'experience', icon: <Globe size={20} />, label: 'Journey' },
+    { id: 'education', icon: <GraduationCap size={20} />, label: 'Education' },
+    { id: 'certifications', icon: <Award size={20} />, label: 'Certs' },
     { id: 'contact', icon: <MessageSquare size={20} />, label: 'Connect' },
   ];
 

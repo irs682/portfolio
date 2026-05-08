@@ -35,6 +35,11 @@ export default {
         },
         accent: {
           500: '#f59e0b',
+        },
+        dark: {
+          700: '#1e293b',
+          800: '#0f172a',
+          900: '#020617',
         }
       },
       fontFamily: {

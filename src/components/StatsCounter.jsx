@@ -45,7 +45,7 @@ const StatsCounter = () => {
     <section className="py-12 relative z-10 border-b border-white/5 bg-dark-900/50">
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-white/5">
-          <StatItem value="2" label="Years Experience" />
+          <StatItem value="1" label="Year Experience" />
           <StatItem value="15" label="Projects Completed" />
           <StatItem value="10" label="AI Models Deployed" />
           <StatItem value="50" label="K+ Lines of Code" />

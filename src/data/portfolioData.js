@@ -4,9 +4,9 @@ export const portfolioData = {
   personal: {
     name: "Irshad Amin",
     profileImages: [
-      "/src/assets/irhsad.jpg",
-      "/src/assets/image4.jpg",
-      "/src/assets/imge3.jpg"
+      "/assets/irhsad.jpg",
+      "/assets/image4.jpg",
+      "/assets/imge3.jpg"
     ],
     titles: [
       "AI Engineer",
@@ -102,7 +102,7 @@ export const portfolioData = {
       features: ["Context-aware responses", "Administrative automation", "Real-time sync"],
       github: "https://github.com/irs682",
       demo: "#",
-      image: "https://images.unsplash.com/photo-1531746790731-6c087fecd05a?auto=format&fit=crop&q=80&w=800"
+      image: "/assets/image4.jpg"
     },
     {
       id: 6,
@@ -114,6 +114,17 @@ export const portfolioData = {
       github: "https://github.com/irs682/Handling-Mixed-Variables-Feature-Engineering/blob/main/next_world_pridactor_project.ipynb",
       demo: "#",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      id: 7,
+      title: "AI-Powered Image Analytics",
+      description: "A sophisticated computer vision system for real-time object detection and semantic segmentation, optimized for edge devices.",
+      category: "AI/ML",
+      tech: ["Python", "PyTorch", "OpenCV", "TensorRT"],
+      features: ["Real-time processing", "Multi-object tracking", "Edge optimization"],
+      github: "https://github.com/irs682",
+      demo: "#",
+      image: "/assets/imge3.jpg"
     }
   ],
   experience: [

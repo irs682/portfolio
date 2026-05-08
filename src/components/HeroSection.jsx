@@ -212,7 +212,7 @@ const HeroSection = () => {
               className="grid grid-cols-3 gap-12 border-t border-slate-200/60 pt-10"
             >
               {[
-                { val: "4+", label: "Years Exp" },
+                { val: "1+", label: "Year Exp" },
                 { val: "15+", label: "Success Projects" },
                 { val: "100%", label: "Satisfaction" }
               ].map((stat, i) => (

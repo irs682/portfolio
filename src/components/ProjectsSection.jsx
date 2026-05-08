@@ -77,12 +77,12 @@ const ProjectsSection = () => {
                   className="h-full"
                 >
                   <div className="glass-card h-full flex flex-col group overflow-hidden border-slate-200/50 bg-white/50 backdrop-blur-sm rounded-[2.5rem] hover:bg-white transition-all duration-700">
-                    <div className="relative h-64 overflow-hidden p-4">
+                    <div className="relative aspect-[4/3] overflow-hidden p-4">
                       <div className="w-full h-full rounded-[2rem] overflow-hidden relative">
                         <img 
                           src={project.image} 
                           alt={project.title} 
-                          className="w-full h-full object-cover grayscale-[100%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000 ease-in-out"
+                          className="w-full h-full object-cover object-top grayscale-[100%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000 ease-in-out"
                         />
                         <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors duration-700" />
                       </div>
